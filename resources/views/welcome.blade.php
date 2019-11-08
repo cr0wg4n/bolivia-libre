@@ -83,7 +83,7 @@
               <li><a href="#">Drop Down 5</a></li>
             </ul>
           </li> --}}
-          <li><a href="#footer">Muro de la esperanza</a></li>
+          <li><a href="#hope">Muro de la esperanza</a></li>          
           <li><a href="#footer">Sugerencias</a></li>
         </ul>
       </nav><!-- .main-nav -->
@@ -117,21 +117,13 @@
   </section><!-- #intro -->
 
   <main id="main">
-
+  
     <!--==========================
       free Section
     ============================-->
     <section id="free">
-
       <div class="container">
         <div class="row">
-
-          <div class="col-lg-5 col-md-6">
-            <div class="free-img">
-              <img src="img/about-img.jpg" alt="">
-            </div>
-          </div>
-
           <div class="col-lg-7 col-md-6">
             <div class="free-content">
               <h2>Libre acceso a la información</h2>
@@ -142,6 +134,11 @@
                 de algo.
               </p>
             </div>
+          </div>
+          <div class="col-lg-5 col-md-6">
+              <div class="free-img">
+                <img src="img/home/libertad1.png" alt="">
+              </div>
           </div>
         </div>
       </div>
@@ -200,7 +197,25 @@
     </section><!-- #services -->
 
     <!--==========================
-      Why Us Section
+      hope Section
+    ============================-->
+    <section id="hope">
+        <header class="section-header">
+            <h3>Muro de la Esperanza</h3>
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-12">
+                  <div class="hope-img">
+                    <img src="img/home/bolivia_words.png" alt="">
+                  </div>
+                </div>
+            </div>
+          </header>
+      </section>
+  
+
+
+    <!--==========================
+      Numbers Section
     ============================-->
     <section id="why-us" class="wow fadeIn">
       <div class="container-fluid">
@@ -215,18 +230,18 @@
         <div class="row counters">
 
           <div class="col-lg-4 col-6 text-center">
-            <span data-toggle="counter-up">421</span>
+            <span data-toggle="counter-up">0</span>
             <p>Denuncias de Fraude</p>
           </div>
 
           <div class="col-lg-4 col-6 text-center">
-            <span data-toggle="counter-up">1,364</span>
+            <span data-toggle="counter-up">0</span>
             <p>Denuncias de Agresiones</p>
           </div>
 
           <div class="col-lg-4 col-12 text-center">
-              <span data-toggle="counter-up">274</span>
-              <p>Denuncias Totales</p>
+              <span data-toggle="counter-up">12,312,323</span>
+              <p>Participación en el Muro de la Esperanza</p>
           </div>
     
         </div>
@@ -254,49 +269,6 @@
       </div>
     </section><!-- #call-to-action -->
 
-    <!--==========================
-      Features Section
-    ============================-->
-    <section id="features">
-      <div class="container">
-
-        <div class="row feature-item">
-          <div class="col-lg-6 wow fadeInUp">
-            <img src="img/features-1.svg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-6 wow fadeInUp pt-5 pt-lg-0">
-            <h4>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h4>
-            <p>
-              Ipsum in aspernatur ut possimus sint. Quia omnis est occaecati possimus ea. Quas molestiae perspiciatis occaecati qui rerum. Deleniti quod porro sed quisquam saepe. Numquam mollitia recusandae non ad at et a.
-            </p>
-            <p>
-              Ad vitae recusandae odit possimus. Quaerat cum ipsum corrupti. Odit qui asperiores ea corporis deserunt veritatis quidem expedita perferendis. Qui rerum eligendi ex doloribus quia sit. Porro rerum eum eum.
-            </p>
-          </div>
-        </div>
-
-        <div class="row feature-item mt-5 pt-5">
-          <div class="col-lg-6 wow fadeInUp order-1 order-lg-2">
-            <img src="img/features-2.svg" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-6 wow fadeInUp pt-4 pt-lg-0 order-2 order-lg-1">
-            <h4>Neque saepe temporibus repellat ea ipsum et. Id vel et quia tempora facere reprehenderit.</h4>
-            <p>
-             Delectus alias ut incidunt delectus nam placeat in consequatur. Sed cupiditate quia ea quis. Voluptas nemo qui aut distinctio. Cumque fugit earum est quam officiis numquam. Ducimus corporis autem at blanditiis beatae incidunt sunt. 
-            </p>
-            <p>
-              Voluptas saepe natus quidem blanditiis. Non sunt impedit voluptas mollitia beatae. Qui esse molestias. Laudantium libero nisi vitae debitis. Dolorem cupiditate est perferendis iusto.
-            </p>
-            <p>
-              Eum quia in. Magni quas ipsum a. Quis ex voluptatem inventore sint quia modi. Numquam est aut fuga mollitia exercitationem nam accusantium provident quia.
-            </p>
-          </div>
-          
-        </div>
-
-      </div>
-    </section><!-- #free -->
 
     <!--==========================
       Frequently Asked Questions Section
@@ -305,7 +277,10 @@
       <div class="container">
         <header class="section-header">
           <h3>Preguntas Frecuentes</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+          <p>
+            Algunas de las preguntas con respecto a tu integridad al participar en esta página estan descritas en esta 
+            sección.
+          </p>
         </header>
 
         <ul id="faq-list" class="wow fadeInUp">

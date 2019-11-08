@@ -60,7 +60,6 @@
         <h1 class="text-light"><a href="#intro" class="scrollto"><span> Bolivia - Libre</span></a></h1>
         <!-- <a href="#header" class="scrollto"><img src="img/logo.png" alt="" class="img-fluid"></a> -->
       </div>
-
       <nav class="main-nav float-right d-none d-lg-block">
         <ul>
           <li class="active"><a href="#intro">Inicio</a></li>
@@ -94,28 +93,25 @@
   <!--==========================
     Intro Section
   ============================-->
-  <section id="intro" class="clearfix">
+  <section id="intro" class="clearfix back">
     <div class="container d-flex h-100">
       <div class="row justify-content-center align-self-center">
-        <div class="col-md-6 intro-info order-md-first order-last">
-          <h2>No hay democracia<br>si existe <span>ignorancia</span></h2>
+        <div class="col-md-12 intro-info order-md-first order-last">
+          <h2>No hay democracia si existe <span>ignorancia</span></h2>
           <p>
             Plataforma ciudadana para la centralización de 
-            información acerca de injusticias, conflictos y confrontamientos. ¡Tu opinión cuenta!.
+            información acerca de injusticias y conflictos. ¡Tu opinión cuenta!.
           </p>
           <div>
             <a href="#services" class="btn-get-started scrollto">Denuncia</a>
           </div>
-        </div>
-  
-        <div class="col-md-6 intro-img order-md-last order-first">
-          <img src="img/intro-img.svg" alt="" class="img-fluid">
         </div>
       </div>
 
     </div>
   </section><!-- #intro -->
 
+  <audio src="sound/el_pueblo_unido.mp3" autoplay controls></audio>
   <main id="main">
   
     <!--==========================
@@ -123,11 +119,13 @@
     ============================-->
     <section id="free">
       <div class="container">
+        <header class="section-header">
+            <h3>Libre acceso a la información</h3>
+        </header>
         <div class="row">
-          <div class="col-lg-7 col-md-6">
+          <div class="col-lg-12 col-md-12">
             <div class="free-content">
-              <h2>Libre acceso a la información</h2>
-              <h3>Porque todos tenemos el derecho de saber lo que pasa en nuestro país.</h3>
+              <h3 style="text-align: center">Porque todos tenemos el derecho de saber lo que pasa en nuestro país.</h3>
               <p>
                 Facebook, Whatssapp y otras redes sociales contienen la información que sucede momento a momento, pero esta es olvidada,
                 sepultada y hasta restringida. Solo centralizando la información lograremos que esta tenga sentido, objetividad y sirva 
@@ -135,12 +133,12 @@
               </p>
             </div>
           </div>
-          <div class="col-lg-5 col-md-6">
+          {{-- <div class="col-lg-5 col-md-6">
               <div class="free-img">
                 <img src="img/home/libertad1.png" alt="">
               </div>
           </div>
-        </div>
+        </div> --}}
       </div>
 
     </section><!-- #free -->
@@ -200,16 +198,34 @@
       hope Section
     ============================-->
     <section id="hope">
-        <header class="section-header">
-            <h3>Muro de la Esperanza</h3>
-            <div class="row justify-content-center">
-                <div class="col-lg-6 col-12">
-                  <div class="hope-img">
-                    <img src="img/home/bolivia_words.png" alt="">
-                  </div>
+        <div class="container">
+          <header class="section-header">
+              <h3>Muro de la Esperanza</h3>
+          </header>
+          <div class="row justify-content-center">
+            <div class="col-lg-12 col-12">
+              <div class="hope-content">
+                  
+                  <p>Bolivia no necesita más muertes, la batalla no esta en las calles ni en esa esquina que 
+                    bloqueas con tanto afán, este país funciona gracias a ti que te movilizas y trabajas, que te 
+                    sacrificas para llevar el pan a tu familia, para ver sonreir a tus hijos, a tí que soportas la insolencia 
+                    y los malos días de otras personas. Entonces, ¿dónde esta la verdadera batalla?, es irónico por que vas a ella
+                    cada día, unas ocasiones las pierdes y otras las ganas, ¿sigues sin entender?, cada vez que te conformas, robas o
+                    mientes, pierdes y pierden todos los que te rodean incluso Bolivia, cada vez que perseveras, mejoras, enseñas o al
+                    menos lo intentas, ganas y ganan los demás, supongo que ya sabes por donde va, Bolivia somos todos y no necesita de
+                    más retraso económico, tecnológico y social, este país se debe a ti y tu a el.</p>
+                  <p>Ahora mismo vivimos en una Bolivia polarizada, nos enfrentamos entre hermanos (ricos, pobres, jóvenes, niños, adultos,
+                    ancianos, citadinos, campesinos, hermanos de las zonas altas y bajas de Bolivia) reflexionemos por las víctimas, en 
+                    ese sentido, te invito a que deposites de corazón los mejores deseos para una <strong>Bolivia Mejor</strong>.</p>
+              </div>
+            </div>
+            <div class="col-lg-12 col-12">
+                <div class="hope-img">
+                  <img src="img/home/bolivia_words.png" alt="">
                 </div>
             </div>
-          </header>
+          </div>
+        </div>
       </section>
   
 
@@ -358,9 +374,6 @@
     <div class="container">
       <div class="copyright">
         &copy; Copyright <strong>Bolivia Libre</strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        El template base es propiedad de <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
   </footer>

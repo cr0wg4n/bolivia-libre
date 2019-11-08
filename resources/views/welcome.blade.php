@@ -111,9 +111,7 @@
     </div>
   </section><!-- #intro -->
 
-  <audio src="sound/el_pueblo_unido.mp3" autoplay controls></audio>
   <main id="main">
-  
     <!--==========================
       free Section
     ============================-->
@@ -198,35 +196,65 @@
       hope Section
     ============================-->
     <section id="hope">
-        <div class="container">
-          <header class="section-header">
-              <h3>Muro de la Esperanza</h3>
-          </header>
-          <div class="row justify-content-center">
-            <div class="col-lg-12 col-12">
-              <div class="hope-content">
-                  
-                  <p>Bolivia no necesita más muertes, la batalla no esta en las calles ni en esa esquina que 
-                    bloqueas con tanto afán, este país funciona gracias a ti que te movilizas y trabajas, que te 
-                    sacrificas para llevar el pan a tu familia, para ver sonreir a tus hijos, a tí que soportas la insolencia 
-                    y los malos días de otras personas. Entonces, ¿dónde esta la verdadera batalla?, es irónico por que vas a ella
-                    cada día, unas ocasiones las pierdes y otras las ganas, ¿sigues sin entender?, cada vez que te conformas, robas o
-                    mientes, pierdes y pierden todos los que te rodean incluso Bolivia, cada vez que perseveras, mejoras, enseñas o al
-                    menos lo intentas, ganas y ganan los demás, supongo que ya sabes por donde va, Bolivia somos todos y no necesita de
-                    más retraso económico, tecnológico y social, este país se debe a ti y tu a el.</p>
-                  <p>Ahora mismo vivimos en una Bolivia polarizada, nos enfrentamos entre hermanos (ricos, pobres, jóvenes, niños, adultos,
-                    ancianos, citadinos, campesinos, hermanos de las zonas altas y bajas de Bolivia) reflexionemos por las víctimas, en 
-                    ese sentido, te invito a que deposites de corazón los mejores deseos para una <strong>Bolivia Mejor</strong>.</p>
-              </div>
+      <div class="container">
+        <header class="section-header">
+            <h3>Muro de la Esperanza</h3>
+        </header>
+        <div class="row justify-content-center">
+          <div class="col-lg-12 col-12">
+            <div class="hope-content">
+                
+                <p>Bolivia no necesita más muertes, la batalla no esta en las calles ni en esa esquina que 
+                  bloqueas con tanto afán, este país funciona gracias a ti que te movilizas y trabajas, que te 
+                  sacrificas para llevar el pan a tu familia, para ver sonreir a tus hijos, a tí que soportas la insolencia 
+                  y los malos días de otras personas. Entonces, ¿dónde esta la verdadera batalla?, es irónico por que vas a ella
+                  cada día, unas ocasiones las pierdes y otras las ganas, ¿sigues sin entender?, cada vez que te conformas, robas o
+                  mientes, pierdes y pierden todos los que te rodean incluso Bolivia, cada vez que perseveras, mejoras, enseñas o al
+                  menos lo intentas, ganas y ganan los demás, supongo que ya sabes por donde va, Bolivia somos todos y no necesita de
+                  más retraso económico, tecnológico y social, este país se debe a ti y tu a el.</p>
+                <p>Ahora mismo vivimos en una Bolivia polarizada, nos enfrentamos entre hermanos (ricos, pobres, jóvenes, niños, adultos,
+                  ancianos, citadinos, campesinos, hermanos de las zonas altas y bajas de Bolivia) reflexionemos por las víctimas, en 
+                  ese sentido, te invito a que deposites de corazón los mejores deseos para una <strong>Bolivia Mejor</strong>.</p>
             </div>
-            <div class="col-lg-12 col-12">
-                <div class="hope-img">
-                  <img src="img/home/bolivia_words.png" alt="">
+          </div>
+          <div class="col-lg-6 col-12">
+              <div class="hope-img">
+                <img src="img/home/bolivia_words.png" alt="">
+              </div>
+          </div>
+          <div class="col-lg-6 col-12">
+            <div class="form">
+              <h4>Envianos Alguna Sugerencia</h4>
+              <p>Si tienes una opinión, crítica, mejora o si deseas apoyarnos en el desarrollo de esta plataforma háznoslo saber.
+              </p>
+              <form action="" method="post" role="form" class="contactForm">
+                <div class="form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Nombre o Apodo"/>
+                  <div class="validation"></div>
                 </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Correo Electrónico*" data-rule="email" data-msg="Inserta un correo electrónico válido" />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Tema*" data-rule="minlen:4" data-msg="No te olvides del tema" />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" name="message" rows="5" data-rule="required" placeholder="Sugerencia*" data-msg="Sugierenos algo" ></textarea>
+                  <div class="validation"></div>
+                </div>
+
+                <div id="sendmessage">Tu mensaje ha sido enviado gracias!</div>
+                <div id="errormessage"></div>
+
+                <div class="text-center"><button type="submit" title="Send Message">Enviar Sugerencia</button></div>
+              </form>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
   
 
 

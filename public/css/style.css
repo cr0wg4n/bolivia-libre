@@ -1,10 +1,7 @@
-/*
-  Theme Name: Rapid
-  Theme URL: https://bootstrapmade.com/rapid-multipurpose-bootstrap-business-template/
-  Author: BootstrapMade.com
-  License: https://bootstrapmade.com/license/
-*/
 
+#comming-soon {
+  opacity: 0.35;
+}
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -1288,16 +1285,16 @@ h6 {
   background: #fff;
 }
 
-#footer .footer-top {
+#footer  {
   padding: 60px 0 30px 0;
   background: #f5f8fd;
 }
 
-#footer .footer-top .footer-info {
+#footer  .footer-info {
   margin-bottom: 30px;
 }
 
-#footer .footer-top .footer-info h3 {
+#footer  .footer-info h3 {
   font-size: 34px;
   margin: 0 0 20px 0;
   padding: 2px 0 2px 0;
@@ -1309,7 +1306,7 @@ h6 {
   text-transform: uppercase;
 }
 
-#footer .footer-top .footer-info p {
+#footer  .footer-info p {
   font-size: 13px;
   line-height: 24px;
   margin-bottom: 0;
@@ -1317,7 +1314,7 @@ h6 {
   color: #535074;
 }
 
-#footer .footer-top .social-links a {
+#footer  .social-links a {
   font-size: 18px;
   display: inline-block;
   background: #ff8944;
@@ -1332,12 +1329,12 @@ h6 {
   transition: 0.3s;
 }
 
-#footer .footer-top .social-links a:hover {
+#footer  .social-links a:hover {
   background: #da6a29;
   color: #fff;
 }
 
-#footer .footer-top h4 {
+#footer  h4 {
   font-size: 14px;
   font-weight: bold;
   color: #413e66;
@@ -1346,52 +1343,52 @@ h6 {
   padding-bottom: 10px;
 }
 
-#footer .footer-top .footer-links {
+#footer  .footer-links {
   margin-bottom: 30px;
 }
 
-#footer .footer-top .footer-links ul {
+#footer  .footer-links ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-#footer .footer-top .footer-links ul li {
+#footer  .footer-links ul li {
   padding: 8px 0;
 }
 
-#footer .footer-top .footer-links ul li:first-child {
+#footer  .footer-links ul li:first-child {
   padding-top: 0;
 }
 
-#footer .footer-top .footer-links ul a {
+#footer  .footer-links ul a {
   color: #696592;
 }
 
-#footer .footer-top .footer-links ul a:hover {
+#footer  .footer-links ul a:hover {
   color: #ff8944;
 }
 
-#footer .footer-top .footer-contact {
+#footer  .footer-contact {
   margin-bottom: 30px;
 }
 
-#footer .footer-top .footer-contact p {
+#footer  .footer-contact p {
   line-height: 26px;
 }
 
-#footer .footer-top .footer-newsletter {
+#footer  .footer-newsletter {
   margin-bottom: 30px;
 }
 
-.footer-top .footer-newsletter input[type="email"] {
+ .footer-newsletter input[type="email"] {
   border: 0;
   padding: 6px 8px;
   width: 65%;
   border: 1px solid #d9dde6;
 }
 
-.footer-top .footer-newsletter input[type="submit"] {
+ .footer-newsletter input[type="submit"] {
   background: #ff8944;
   border: 1px solid #ff8944;
   width: 35%;
@@ -1402,15 +1399,15 @@ h6 {
   cursor: pointer;
 }
 
-.footer-top .footer-newsletter input[type="submit"]:hover {
+ .footer-newsletter input[type="submit"]:hover {
   background: #da6a29;
 }
 
-.footer-top .form .form-group {
+ .form .form-group {
   margin-bottom: 15px;
 }
 
-.footer-top .form #sendmessage {
+ .form #sendmessage {
   color: #fff;
   background: #ff8944;
   display: none;
@@ -1420,7 +1417,7 @@ h6 {
   margin-bottom: 15px;
 }
 
-.footer-top .form #errormessage {
+ .form #errormessage {
   color: #fff;
   display: none;
   background: red;
@@ -1430,13 +1427,13 @@ h6 {
   margin-bottom: 15px;
 }
 
-.footer-top .form #sendmessage.show,
-.footer-top .form #errormessage.show,
-.footer-top .form .show {
+ .form #sendmessage.show,
+ .form #errormessage.show,
+ .form .show {
   display: block;
 }
 
-.footer-top .form .validation {
+ .form .validation {
   color: red;
   display: none;
   margin: 0 0 20px;
@@ -1444,40 +1441,40 @@ h6 {
   font-size: 13px;
 }
 
-.footer-top .form label {
+ .form label {
   color: #413e66;
   font-weight: 500;
 }
 
-.footer-top .form input,
-.footer-top .form textarea {
+ .form input,
+ .form textarea {
   border-radius: 0;
   box-shadow: none;
   border: 1px solid #dce1ec;
   font-size: 14px;
 }
 
-.footer-top .form input::-webkit-input-placeholder,
-.footer-top .form textarea::-webkit-input-placeholder {
+ .form input::-webkit-input-placeholder,
+ .form textarea::-webkit-input-placeholder {
   color: #a2a0bd;
 }
 
-.footer-top .form input::-moz-placeholder,
-.footer-top .form textarea::-moz-placeholder {
+ .form input::-moz-placeholder,
+ .form textarea::-moz-placeholder {
   color: #a2a0bd;
 }
 
-.footer-top .form input:-ms-input-placeholder,
-.footer-top .form textarea:-ms-input-placeholder {
+ .form input:-ms-input-placeholder,
+ .form textarea:-ms-input-placeholder {
   color: #a2a0bd;
 }
 
-.footer-top .form input::placeholder,
-.footer-top .form textarea::placeholder {
+ .form input::placeholder,
+ .form textarea::placeholder {
   color: #a2a0bd;
 }
 
-.footer-top .form button[type="submit"] {
+ .form button[type="submit"] {
   background: #ff8944;
   border: 0;
   border-radius: 3px;
@@ -1486,7 +1483,7 @@ h6 {
   transition: 0.3s;
 }
 
-.footer-top .form button[type="submit"]:hover {
+ .form button[type="submit"]:hover {
   background: #da6a29;
   cursor: pointer;
 }
@@ -1631,7 +1628,7 @@ h6 {
 }
 
 @media (max-width: 574px) {
-  #footer .footer-top .social-links a {
+  #footer  .social-links a {
     margin-bottom: 25px;
   }
 }

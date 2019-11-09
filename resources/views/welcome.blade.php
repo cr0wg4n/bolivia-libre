@@ -167,17 +167,17 @@
               </p>
             </div>
           </div>
-
-          <div class="col-md-6 col-lg-6 wow bounceInUp" data-wow-duration="0.5s">
+          <div id="comming-soon" class="col-md-6 col-lg-6 wow bounceInUp" data-wow-duration="0.5s">
             <div class="box">
               <div class="icon" style="background: #fceef3;"><i class="fas fa-fist-raised" style="color: #ff689b;"></i></div>
-              <h4 class="title"><a href="">Denuncias de Agresiones</a></h4>
+              <h4 class="title"><a href="#services">Denuncias de Agresiones (No disponible)</a></h4>
               <p class="description">
                 ¿Sufriste un atropello a tus derechos o viste alguno? ¿Existen conflictos por tu zona?, el sufrimiento que padecen 
                 los inocentes no será envano. Denuncia.
               </p>
             </div>
           </div>
+        
 
           {{-- <div class="col-md-12 col-lg-12 wow bounceInUp" data-wow-duration="0.5s">
             <div class="box">
@@ -191,7 +191,6 @@
 
       </div>
     </section><!-- #services -->
-
     <!--==========================
       hope Section
     ============================-->
@@ -203,52 +202,56 @@
         <div class="row justify-content-center">
           <div class="col-lg-12 col-12">
             <div class="hope-content">
-                
                 <p>Bolivia no necesita más muertes, la batalla no esta en las calles ni en esa esquina que 
                   bloqueas con tanto afán, este país funciona gracias a ti que te movilizas y trabajas, que te 
-                  sacrificas para llevar el pan a tu familia, para ver sonreir a tus hijos, a tí que soportas la insolencia 
+                  sacrificas para llevar el pan a tu familia, a tí que soportas la insolencia 
                   y los malos días de otras personas. Entonces, ¿dónde esta la verdadera batalla?, es irónico por que vas a ella
-                  cada día, unas ocasiones las pierdes y otras las ganas, ¿sigues sin entender?, cada vez que te conformas, robas o
+                  cada día, unas ocasiones las pierdes y otras las ganas, ¿sigues sin entender?, cada vez que te conformas, robas, dañas o
                   mientes, pierdes y pierden todos los que te rodean incluso Bolivia, cada vez que perseveras, mejoras, enseñas o al
                   menos lo intentas, ganas y ganan los demás, supongo que ya sabes por donde va, Bolivia somos todos y no necesita de
-                  más retraso económico, tecnológico y social, este país se debe a ti y tu a el.</p>
-                <p>Ahora mismo vivimos en una Bolivia polarizada, nos enfrentamos entre hermanos (ricos, pobres, jóvenes, niños, adultos,
-                  ancianos, citadinos, campesinos, hermanos de las zonas altas y bajas de Bolivia) reflexionemos por las víctimas, en 
-                  ese sentido, te invito a que deposites de corazón los mejores deseos para una <strong>Bolivia Mejor</strong>.</p>
+                  más retraso económico, tecnológico y social, <strong>este país se debe a ti y tu a el</strong>.</p>
             </div>
           </div>
           <div class="col-lg-6 col-12">
               <div class="hope-img">
                 <img src="img/home/bolivia_words.png" alt="">
               </div>
+              <br>
           </div>
           <div class="col-lg-6 col-12">
             <div class="form">
-              <h4>Envianos Alguna Sugerencia</h4>
-              <p>Si tienes una opinión, crítica, mejora o si deseas apoyarnos en el desarrollo de esta plataforma háznoslo saber.
-              </p>
+              <p>Ahora mismo vivimos en una Bolivia polarizada, nos enfrentamos entre hermanos (ricos, pobres, jóvenes, niños, adultos,
+                ancianos, citadinos, campesinos, hermanos de las zonas altas y bajas de Bolivia) reflexionemos por las víctimas.</p>
+              <p>Te invito a que deposites de corazón los mejores deseos para una <strong>Bolivia Mejor</strong>.</p>
               <form action="" method="post" role="form" class="contactForm">
                 <div class="form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Nombre o Apodo"/>
-                  <div class="validation"></div>
-                </div>
                 <div class="form-group">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Correo Electrónico*" data-rule="email" data-msg="Inserta un correo electrónico válido" />
+                  <textarea class="form-control" name="message" rows="5" data-rule="required" placeholder="Envia un mensaje o frase que te nazca de lo mas profundo de tu corazón*" data-msg="No olvides dejar un mensaje para Bolivia"></textarea>
                   <div class="validation"></div>
                 </div>
-                <div class="form-group">
-                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Tema*" data-rule="minlen:4" data-msg="No te olvides del tema" />
-                  <div class="validation"></div>
+                <div class="row justify-content-center">
+                  <div class="col-lg-5 col-10">
+                      <div id="captcha" class="form-group">
+                        {!! Captcha::img(); !!}
+                      </div>
+                  </div>
+                  <div class="col-lg-1 col-2">
+                      <div id="change-captcha" class="form-group">
+                          <i class="fa fa-refresh" title="Refrescar código" style="color: #e98e06;" onMouseOver="this.style.cursor='pointer'"></i>
+                      </div>
+                  </div>
+                  <div class="col-lg-6 col-12">
+                    <div class="form-group">
+                      <input type="text" class="form-control" name="subject" id="subject" placeholder="Código de verificación*" data-rule="required" data-msg="El captcha es obligatorio" />
+                      <div class="validation"></div>
+                    </div>
+                  </div>
                 </div>
-                <div class="form-group">
-                  <textarea class="form-control" name="message" rows="5" data-rule="required" placeholder="Sugerencia*" data-msg="Sugierenos algo" ></textarea>
-                  <div class="validation"></div>
-                </div>
-
                 <div id="sendmessage">Tu mensaje ha sido enviado gracias!</div>
                 <div id="errormessage"></div>
-
-                <div class="text-center"><button type="submit" title="Send Message">Enviar Sugerencia</button></div>
+                <p>No basta con enviar tus mejores deseos, trabaja para que se cumplan. Tus deseos irán haciendo 
+                  crecer la Bolivia que tanto amamos (inclusive a la que esta en esta sección). <strong>Se actualiza una vez al día</strong>.</p>
+                <div class="text-center"><button type="submit" title="Send Message">Enviar Mensaje</button></div>
               </form>
             </div>
           </div>
@@ -361,7 +364,6 @@
                 <div class="col-sm-12">
 
                   <div class="form">
-              
                       <h4>Envianos Alguna Sugerencia</h4>
                       <p>Si tienes una opinión, crítica, mejora o si deseas apoyarnos en el desarrollo de esta plataforma háznoslo saber.
                       </p>
@@ -427,6 +429,10 @@
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
-
+  <script>
+    $('#change-captcha').click(function(){
+      $('#captcha').children().attr('src','/captcha/default?'+Math.random());
+    });
+  </script>
 </body>
 </html>

@@ -11,11 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+#Auth::routes();
+#Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/','ViewController@home');
 Route::post('/message', 'MessageController@store');
+Route::get('/message/{id}', 'MessageController@edit');
+Route::post('/feedback', 'FeedbackController@store');
+Route::get('/evidenciasform','EvidenceController@index');
+Route::get('/evidencias','EvidenceController@pagination');
+Route::post('/evidences', 'EvidenceController@store');

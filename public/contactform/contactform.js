@@ -11,7 +11,7 @@ jQuery(document).ready(function($) {
 
       var i = $(this); // current input
       var rule = i.attr('data-rule');
-
+      var msg = '';
       if (rule !== undefined) {
         var ierror = false; // error flag for current input
         var pos = rule.indexOf(':', 0);
@@ -26,18 +26,28 @@ jQuery(document).ready(function($) {
           case 'required':
             if (i.val() === '') {
               ferror = ierror = true;
+              msg = "Este campo es requerido, rellénalo";
             }
             break;
 
           case 'minlen':
             if (i.val().length < parseInt(exp)) {
               ferror = ierror = true;
+              msg = "Este campo no debe contener menos de "+exp+" caracteres.";
+            }
+            break;
+
+          case 'maxlen':
+            if (i.val().length < parseInt(exp)) {
+              ferror = ierror = true;
+              msg = "Este campo no debe contener más de "+exp+" caracteres.";
             }
             break;
 
           case 'email':
             if (!emailExp.test(i.val())) {
               ferror = ierror = true;
+              msg = "Inserta un correo electrónico válido"
             }
             break;
 
@@ -54,14 +64,15 @@ jQuery(document).ready(function($) {
             }
             break;
         }
-        i.next('.validation').html((ierror ? (i.attr('data-msg') !== undefined ? i.attr('data-msg') : 'wrong Input') : '')).show('blind');
+       i.next('.validation').html((ierror ? (msg !== undefined ? msg : 'wrong Input') : '')).show('blind');
+//        i.next('.validation').html((ierror ? (i.attr('data-msg') !== undefined ? i.attr('data-msg') : 'wrong Input') : '')).show('blind');
       }
     });
     f.children('textarea').each(function() { // run all inputs
 
       var i = $(this); // current input
       var rule = i.attr('data-rule');
-
+      var msg = '';
       if (rule !== undefined) {
         var ierror = false; // error flag for current input
         var pos = rule.indexOf(':', 0);
@@ -76,16 +87,25 @@ jQuery(document).ready(function($) {
           case 'required':
             if (i.val() === '') {
               ferror = ierror = true;
+              msg = "Este campo es requerido, rellénalo";
             }
             break;
 
           case 'minlen':
             if (i.val().length < parseInt(exp)) {
               ferror = ierror = true;
+              msg = "Este campo no debe contener menos de "+exp+" caracteres.";
+            }
+            break;
+          case 'maxlen':
+            if (i.val().length > parseInt(exp)) {
+              ferror = ierror = true;
+              msg = "Este campo no debe contener más de "+exp+" caracteres.";
             }
             break;
         }
-        i.next('.validation').html((ierror ? (i.attr('data-msg') != undefined ? i.attr('data-msg') : 'wrong Input') : '')).show('blind');
+        i.next('.validation').html((ierror ? (msg != undefined ? msg : 'wrong Input') : '')).show('blind');
+//        i.next('.validation').html((ierror ? (i.attr('data-msg') != undefined ? i.attr('data-msg') : 'wrong Input') : '')).show('blind');
       }
     });
     if (ferror) return false;
@@ -97,19 +117,31 @@ jQuery(document).ready(function($) {
     $.ajax({
       type: "POST",
       url: action,
+      headers: {
+        'x-csrf-token': $("meta[name=csrf-token]").attr('content')
+      },
       data: str,
       success: function(msg) {
-        // alert(msg);
-        if (msg == 'OK') {
-          $("#sendmessage").addClass("show");
-          $("#errormessage").removeClass("show");
+        console.log(msg);
+        if (msg.msg == 'OK') {
+          $("#"+msg.name+"-validation").addClass("show");
+          setTimeout(function(){$("#"+msg.name+"-validation").removeClass("show");}, 10000);
           $('.contactForm').find("input, textarea").val("");
         } else {
-          $("#sendmessage").removeClass("show");
-          $("#errormessage").addClass("show");
-          $('#errormessage').html(msg);
+          // $("#sendmessage").removeClass("show");
+          // $("#errormessage").addClass("show");
+          // $('#errormessage').html(msg);
+          if(msg.name == 'message'){
+            $('#captcha-validation').html(msg.msg);
+          }else{
+            $('#captcha-validation-2').html(msg.msg);
+          }
         }
-
+        if(msg.name == 'message'){
+          $('#captcha').children().attr('src','/captcha/default?'+Math.random());
+        }else{
+          $('#captcha-2').children().attr('src','/captcha/default?'+Math.random());
+        }
       }
     });
     return false;

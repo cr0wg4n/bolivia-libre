@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Message;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class MessageController extends Controller
 {
@@ -14,7 +15,7 @@ class MessageController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -24,7 +25,7 @@ class MessageController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -34,8 +35,17 @@ class MessageController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {    
+        $message = new Message();
+        $validator = Validator::make($request->all(),$message->rules);
+        if ($validator->fails()) {
+            return response()->json(['name'=>'message','msg'=>'Intente nuevamente','errors'=>$validator->errors()]);
+        }
+        $now = Carbon::now();
+        $message->name = $request->name;
+        $message->message = $request->message;
+        $message->save();
+        return response()->json(['name'=>'message','msg'=>'OK']);
     }
 
     /**

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Feedback;
+use App\Evidence;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class FeedbackController extends Controller
+class EvidenceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,13 @@ class FeedbackController extends Controller
      */
     public function index()
     {
-        //
+        return view('evidences');
     }
 
+    public function pagination()
+    {
+        
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -36,26 +40,26 @@ class FeedbackController extends Controller
      */
     public function store(Request $request)
     {
-        $feedback = new Feedback();
-        $validator = Validator::make($request->all(),$feedback->rules);
+        $evidence = new Evidence();
+        $validator = Validator::make($request->all(),$evidence->rules);
         if ($validator->fails()) {
-            return response()->json(['name'=>'feedback','msg'=>'Intente nuevamente','errors'=>$validator->errors()]);
+            return response()->json(['success'=>'no','errors'=>$validator->errors()]);
         }
-        $feedback->name = $request->name;
-        $feedback->email = $request->email;
-        $feedback->subject= $request->subject;
-        $feedback->message= $request->message;
-        $feedback->save();
-        return response()->json(['name'=>'feedback','msg'=>'OK']);
+        $now = Carbon::now();
+        $evidence->name = $request->name;
+        $evidence->email = $request->email;
+        $evidence->content = $request->content;
+        $evidence->save();
+        return response()->json(['success'=>'yes','errors'=>[]]);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Feedback  $feedback
+     * @param  \App\Evidence  $evidence
      * @return \Illuminate\Http\Response
      */
-    public function show(Feedback $feedback)
+    public function show(Evidence $evidence)
     {
         //
     }
@@ -63,10 +67,10 @@ class FeedbackController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Feedback  $feedback
+     * @param  \App\Evidence  $evidence
      * @return \Illuminate\Http\Response
      */
-    public function edit(Feedback $feedback)
+    public function edit(Evidence $evidence)
     {
         //
     }
@@ -75,10 +79,10 @@ class FeedbackController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Feedback  $feedback
+     * @param  \App\Evidence  $evidence
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Feedback $feedback)
+    public function update(Request $request, Evidence $evidence)
     {
         //
     }
@@ -86,10 +90,10 @@ class FeedbackController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Feedback  $feedback
+     * @param  \App\Evidence  $evidence
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Feedback $feedback)
+    public function destroy(Evidence $evidence)
     {
         //
     }

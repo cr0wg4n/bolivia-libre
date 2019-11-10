@@ -4,16 +4,17 @@ namespace App;
 
 use Jenssegers\Mongodb\Eloquent\Model;
 
-class Message extends Model
+class Evidence extends Model
 {
     protected $connection = 'mongodb';
-    protected $collection = 'messages';
+    protected $collection = 'evidences';
     public $rules = [
         'captcha' => 'required|captcha',
         'name' => 'max:100',
-        'message' => 'max:500'
+        'email' => 'max:100',
+        'content' => 'required|max:10000',
     ];
     protected $fillable = [
-        'name', 'message'
+        'name', 'email','content'
     ];
 }

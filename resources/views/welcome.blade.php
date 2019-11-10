@@ -6,11 +6,11 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <!-- Favicons -->
   <link href="img/home/bolivia.png" rel="icon">
   <link href="img/home/bolivia.png" rel="apple-touch-icon">
-
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
 
@@ -160,7 +160,7 @@
           <div class="col-md-6 col-lg-6 wow bounceInUp" data-wow-duration="0.5s">
             <div class="box">
               <div class="icon" style="background: #fff0da;"><i class="fa fa-user-secret" style="color: #e98e06;"></i></div>
-              <h4 class="title"><a href="">Denuncias de Fraude</a></h4>
+              <h4 class="title"><a href="/evidenciasform">Denuncias de Fraude</a></h4>
               <p class="description">
                 Es tu momento de ser Sherlock Holmes y atar algunos cabos sueltos. ¿Tienes información
                 (fotografías, documentos, archivos, etc) que evidencie un fraude?. Hazlo público.
@@ -213,6 +213,7 @@
             </div>
           </div>
           <div class="col-lg-6 col-12">
+              <br>
               <div class="hope-img">
                 <img src="img/home/bolivia_words.png" alt="">
               </div>
@@ -220,13 +221,17 @@
           </div>
           <div class="col-lg-6 col-12">
             <div class="form">
+              
               <p>Ahora mismo vivimos en una Bolivia polarizada, nos enfrentamos entre hermanos (ricos, pobres, jóvenes, niños, adultos,
                 ancianos, citadinos, campesinos, hermanos de las zonas altas y bajas de Bolivia) reflexionemos por las víctimas.</p>
               <p>Te invito a que deposites de corazón los mejores deseos para una <strong>Bolivia Mejor</strong>.</p>
-              <form action="" method="post" role="form" class="contactForm">
+              <form action="/message" method="post" role="form" class="contactForm">
+                @csrf
                 <div class="form-group">
+                  <input type="text" class="form-control" name="name" placeholder="Nombre o Apodo" maxlength="30"/>
+                </div>
                 <div class="form-group">
-                  <textarea class="form-control" name="message" rows="5" data-rule="required" placeholder="Envia un mensaje o frase que te nazca de lo mas profundo de tu corazón*" data-msg="No olvides dejar un mensaje para Bolivia"></textarea>
+                  <textarea class="form-control" maxlength="1000" name="message" rows="5" data-rule="required" placeholder="Envia un mensaje o frase que te nazca de lo mas profundo de tu corazón*" data-msg="No olvides dejar un mensaje para Bolivia"></textarea>
                   <div class="validation"></div>
                 </div>
                 <div class="row justify-content-center">
@@ -242,13 +247,12 @@
                   </div>
                   <div class="col-lg-6 col-12">
                     <div class="form-group">
-                      <input type="text" class="form-control" name="subject" id="subject" placeholder="Código de verificación*" data-rule="required" data-msg="El captcha es obligatorio" />
-                      <div class="validation"></div>
+                      <input type="text" class="form-control" maxlength="10" name="captcha" placeholder="Código de verificación*" data-rule="required" data-msg="El captcha es obligatorio" />
+                      <div id="captcha-validation" class="validation"></div>
                     </div>
                   </div>
                 </div>
-                <div id="sendmessage">Tu mensaje ha sido enviado gracias!</div>
-                <div id="errormessage"></div>
+                <div id="message-validation" class="form-message">Tu mensaje ha sido enviado, ¡Gracias!.</div>
                 <p>No basta con enviar tus mejores deseos, trabaja para que se cumplan. Tus deseos irán haciendo 
                   crecer la Bolivia que tanto amamos (inclusive a la que esta en esta sección). <strong>Se actualiza una vez al día</strong>.</p>
                 <div class="text-center"><button type="submit" title="Send Message">Enviar Mensaje</button></div>
@@ -264,7 +268,7 @@
     <!--==========================
       Numbers Section
     ============================-->
-    <section id="why-us" class="wow fadeIn">
+    <section id="why-us" class="wow fadeIn section-bg">
       <div class="container-fluid">
         
         <header class="section-header">
@@ -276,18 +280,18 @@
       <div class="container">
         <div class="row counters">
 
-          <div class="col-lg-4 col-6 text-center">
-            <span data-toggle="counter-up">0</span>
+          <div class="col-lg-6 col-6 text-center">
+          <span data-toggle="counter-up">{{$eCounter}}</span>
             <p>Denuncias de Fraude</p>
           </div>
 
-          <div class="col-lg-4 col-6 text-center">
+          {{-- <div class="col-lg-4 col-6 text-center">
             <span data-toggle="counter-up">0</span>
             <p>Denuncias de Agresiones</p>
-          </div>
+          </div> --}}
 
-          <div class="col-lg-4 col-12 text-center">
-              <span data-toggle="counter-up">12,312,323</span>
+          <div class="col-lg-6 col-12 text-center">
+              <span data-toggle="counter-up">{{$mCounter}}</span>
               <p>Participación en el Muro de la Esperanza</p>
           </div>
     
@@ -295,7 +299,7 @@
       </div>
     </section>
 
-    <!--==========================
+    {{-- <!--==========================
       Call To Action Section
     ============================-->
     <section id="call-to-action" class="wow fadeInUp">
@@ -314,7 +318,7 @@
         </div>
 
       </div>
-    </section><!-- #call-to-action -->
+    </section><!-- #call-to-action --> --}}
 
 
     <!--==========================
@@ -367,27 +371,44 @@
                       <h4>Envianos Alguna Sugerencia</h4>
                       <p>Si tienes una opinión, crítica, mejora o si deseas apoyarnos en el desarrollo de esta plataforma háznoslo saber.
                       </p>
-                      <form action="" method="post" role="form" class="contactForm">
+                      <form action="/feedback" method="post" role="form" class="contactForm">
+                        @csrf
                         <div class="form-group">
-                          <input type="text" name="name" class="form-control" id="name" placeholder="Nombre o Apodo"/>
+                          <input type="text" maxlength="30" name="name" class="form-control" id="name" placeholder="Nombre o Apodo"/>
+                        </div>
+                        <div class="form-group">
+                          <input type="email" maxlength="100" class="form-control" name="email" id="email" placeholder="Correo Electrónico*" data-rule="email" data-msg="Inserta un correo electrónico válido" />
                           <div class="validation"></div>
                         </div>
                         <div class="form-group">
-                          <input type="email" class="form-control" name="email" id="email" placeholder="Correo Electrónico*" data-rule="email" data-msg="Inserta un correo electrónico válido" />
+                          <input type="text"  maxlength="100" class="form-control" name="subject" id="subject" placeholder="Tema*" data-rule="required" data-msg="No te olvides del tema" />
                           <div class="validation"></div>
                         </div>
                         <div class="form-group">
-                          <input type="text" class="form-control" name="subject" id="subject" placeholder="Tema*" data-rule="minlen:4" data-msg="No te olvides del tema" />
+                          <textarea class="form-control" maxlength="1000" name="message" rows="5" data-rule="required" placeholder="Sugerencia*" data-msg="Sugierenos algo" ></textarea>
                           <div class="validation"></div>
                         </div>
-                        <div class="form-group">
-                          <textarea class="form-control" name="message" rows="5" data-rule="required" placeholder="Sugerencia*" data-msg="Sugierenos algo" ></textarea>
-                          <div class="validation"></div>
+                        <div class="row">
+
+                          <div class="col-lg-5 col-10">
+                              <div id="captcha-2" class="form-group">
+                                {!! Captcha::img(); !!}
+                              </div>
+                          </div>
+                          <div class="col-lg-1 col-2">
+                              <div id="change-captcha-2" class="form-group">
+                                  <i class="fa fa-refresh" title="Refrescar código" style="color: #e98e06;" onMouseOver="this.style.cursor='pointer'"></i>
+                              </div>
+                          </div>
+                          <div class="col-lg-6 col-12">
+                              <div class="form-group">
+                                <input type="text" maxlength="10" class="form-control" name="captcha" placeholder="Código de verificación*" data-rule="required" data-msg="El captcha es obligatorio" />
+                                <div id="captcha-validation-2" class="validation"></div>
+                              </div>
+                          </div>
+
                         </div>
-        
-                        <div id="sendmessage">Tu mensaje ha sido enviado gracias!</div>
-                        <div id="errormessage"></div>
-        
+                        <div id="feedback-validation" class="form-message">Tu sugerencia ha sido enviada, ¡Gracias!.</div>
                         <div class="text-center"><button type="submit" title="Send Message">Enviar Sugerencia</button></div>
                       </form>
                     </div>
@@ -400,7 +421,13 @@
 
       </div>
     </div>
-
+    @foreach ($evidences as $evidence)
+        {{$evidence->id}}
+        @markdown
+        {{$evidence->content}}
+        @endmarkdown
+    @endforeach
+    {{ $evidences->links() }}
     <div class="container">
       <div class="copyright">
         &copy; Copyright <strong>Bolivia Libre</strong>. All Rights Reserved
@@ -432,6 +459,9 @@
   <script>
     $('#change-captcha').click(function(){
       $('#captcha').children().attr('src','/captcha/default?'+Math.random());
+    });
+    $('#change-captcha-2').click(function(){
+      $('#captcha-2').children().attr('src','/captcha/default?'+Math.random());
     });
   </script>
 </body>

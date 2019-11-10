@@ -1407,7 +1407,7 @@ h6 {
   margin-bottom: 15px;
 }
 
- .form #sendmessage {
+ .form-message {
   color: #fff;
   background: #ff8944;
   display: none;
@@ -1417,7 +1417,7 @@ h6 {
   margin-bottom: 15px;
 }
 
- .form #errormessage {
+ .form-error{
   color: #fff;
   display: none;
   background: red;
@@ -1427,9 +1427,7 @@ h6 {
   margin-bottom: 15px;
 }
 
- .form #sendmessage.show,
- .form #errormessage.show,
- .form .show {
+ .show {
   display: block;
 }
 

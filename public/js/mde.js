@@ -73,6 +73,7 @@ $('#evidence-form').submit(function (event) {
         },
         data: str,
         success: function(msg) {
+            console.log(msg);
             $('#success').hide();     
             if(msg.success=="yes"){
                 $('#success').show();

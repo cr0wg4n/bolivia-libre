@@ -107,7 +107,7 @@
           </div>
         </div>
       </div>
-
+      
     </div>
   </section><!-- #intro -->
 
@@ -177,16 +177,7 @@
               </p>
             </div>
           </div>
-        
-
-          {{-- <div class="col-md-12 col-lg-12 wow bounceInUp" data-wow-duration="0.5s">
-            <div class="box">
-              <div class="icon" style="background: #eafde7;"><i class="ion-ios-speedometer-outline" style="color:#41cf2e;"></i></div>
-              <h4 class="title"><a href="">Magni Dolores</a></h4>
-              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-            </div>
-          </div> --}}
-
+          
         </div>
 
       </div>
@@ -421,13 +412,12 @@
 
       </div>
     </div>
-    @foreach ($evidences as $evidence)
-        {{$evidence->id}}
-        @markdown
-        {{$evidence->content}}
-        @endmarkdown
-    @endforeach
-    {{ $evidences->links() }}
+    <div id="blog">
+      @foreach ($evidences as $evidence)
+      @markdown($evidence->content )
+      @endforeach
+      {{ $evidences->links() }}
+    </div>
     <div class="container">
       <div class="copyright">
         &copy; Copyright <strong>Bolivia Libre</strong>. All Rights Reserved

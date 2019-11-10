@@ -45,7 +45,6 @@ class EvidenceController extends Controller
         if ($validator->fails()) {
             return response()->json(['success'=>'no','errors'=>$validator->errors()]);
         }
-        $now = Carbon::now();
         $evidence->name = $request->name;
         $evidence->email = $request->email;
         $evidence->content = $request->content;
